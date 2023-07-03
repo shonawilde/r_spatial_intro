@@ -42,7 +42,7 @@ st_cz %>%
   leaflet_plot()
 
 # mobile data
-st_loops <- read_rds("../PostDoc/vehicle_emissions/london_campaign_analysis/data/edf_london_all_loops.rds")
+st_loops <- read_rds("st_mobile.rds")
 
 st_loops %>% 
   glimpse()
