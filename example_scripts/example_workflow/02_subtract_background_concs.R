@@ -16,7 +16,7 @@ sethd()
 # LOAD ----
 
 # van data
-st_mobile <- read_rds("st_mobile.rds")
+st_mobile <- read_rds("data/st_mobile.rds")
 
 # glimpse
 st_mobile %>% 
@@ -208,11 +208,10 @@ st_background_subtract_wide %>%
 
 
 # SAVE ----
-write_rds(
-  st_background_subtract_wide,
-  "../../mobile_meas_framework/example_workflow/st_background_subtract_wide.rds"
-  
-)
+#write_rds(
+#  st_background_subtract_wide,
+#  "../../mobile_meas_framework/example_workflow/st_background_subtract_wide.rds" 
+#)
 
 
 
