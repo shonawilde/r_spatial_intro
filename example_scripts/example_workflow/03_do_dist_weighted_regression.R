@@ -10,19 +10,21 @@ pacman::p_load(
 
 sethd()
 
-setwd("PostDoc/vehicle_emissions/mobile_meas_framework/example_workflow/")
+# setwd("PostDoc/vehicle_emissions/mobile_meas_framework/example_workflow/")
 
 # LOAD -----
 
 # background data
-st_background_subtract_wide <- read_rds("st_background_subtract_wide.rds")
+st_background_subtract_wide <- read_rds(
+  "data/st_background_subtract_wide.rds"
+  )
 
 st_background_subtract_wide %>% 
   glimpse()
 
 # road network
 st_roads_points <- read_rds(
-  "st_roads_points.rds"
+  "data/st_roads_points.rds"
 )
 
 #
@@ -30,7 +32,9 @@ st_roads_points %>%
   leaflet_plot()
 
 # road network
-st_roads <- read_rds("../../london_measurements/data/road_network/st_roads_route1_central_london.rds")
+st_roads <- read_rds(
+  "data/st_roads_route1_central_london.rds"
+  )
 
 
 
