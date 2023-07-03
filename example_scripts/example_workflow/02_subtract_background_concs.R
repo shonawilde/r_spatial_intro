@@ -10,43 +10,27 @@ pacman::p_load(
 
 sethd()
 
-setwd("PostDoc/vehicle_emissions/london_campaign_analysis/data/")
+# setwd("PostDoc/vehicle_emissions/london_campaign_analysis/data/")
 
 
 # LOAD ----
 
 # van data
-st_mobile <- read_rds("edf_london_all_loops.rds") %>% 
-  mutate(
-    ch4 = ppm_to_ppb(ch4),
-    no_ppb = negative_to_na(no_ppb),
-    co2_ppb = ppm_to_ppb(co2),
-    loop_id = as.numeric(loop_id)
-  ) %>% 
-  filter(
-    speed_kmh < 200
-  )
-
-# filter
-st_mobile_filt <- st_mobile %>% 
-  filter(
-    location == "central_london",
-    loop_id %in% c(1:10)
-  )
+st_mobile <- read_rds("st_mobile.rds")
 
 # glimpse
-st_mobile_filt %>% 
+st_mobile %>% 
   glimpse()
 
 # plot
-st_mobile_filt %>% 
+st_mobile %>% 
   leaflet_plot_coloured("nox_ppb")
 
 
 # REMOVE BACKGROUND ----
 
 # nest by loop
-st_background <- st_mobile_filt %>% 
+st_background <- st_mobile %>% 
   group_nest(
     location, loop_id
   ) %>% 
