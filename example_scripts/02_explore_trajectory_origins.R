@@ -11,11 +11,11 @@ pacman::p_load(
 
 sethd()
 
-setwd("PostDoc/PM2.5_investigations/data/")
+# setwd("PostDoc/PM2.5_investigations/data/")
 
 
 # LOAD ----
-st_traj <- read_rds("intermediate_files/st_traj_join.rds") %>% 
+st_traj <- read_rds("data/st_traj_join.rds") %>% 
   mutate(
     name = replace_na(name, "Ocean")
   )
