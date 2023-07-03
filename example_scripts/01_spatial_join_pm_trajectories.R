@@ -9,13 +9,13 @@ pacman::p_load(
 
 sethd()
 
-setwd("PostDoc/PM2.5_investigations/data/")
+# setwd("PostDoc/PM2.5_investigations/data/")
 
 
 # LOAD ----
 
 # trajectories
-df_traj <- read_rds("trajectories.rds") %>%
+df_traj <- read_rds("data/trajectories.rds") %>%
   tibble() %>% 
   clean_names()
 
