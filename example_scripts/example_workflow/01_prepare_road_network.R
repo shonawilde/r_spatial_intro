@@ -13,13 +13,13 @@ pacman::p_load(
 
 sethd()
 
-setwd("PostDoc/vehicle_emissions/london_campaign_analysis/data/")
+# setwd("PostDoc/vehicle_emissions/london_campaign_analysis/data/")
 
 
 # LOAD ----
 
 #  road network
-st_roads <- read_rds("../../london_measurements/data/road_network/st_roads_route1_central_london.rds")
+st_roads <- read_rds("data/st_roads_route1_central_london.rds")
 
 
 # filter
@@ -65,8 +65,8 @@ st_roads_points %>%
 
 
 # SAVE ----
-write_rds(
-  st_roads_points,
-  "../../mobile_meas_framework/example_workflow/st_roads_points.rds"
-)
+#write_rds(
+  #st_roads_points,
+  #"../../mobile_meas_framework/example_workflow/st_roads_points.rds"
+#)
 
