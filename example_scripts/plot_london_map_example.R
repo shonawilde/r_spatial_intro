@@ -9,16 +9,16 @@ pacman::p_load(
 
 options("rgdal_show_exportToProj4_warnings"="none") 
 
-setwd("~/Google Drive/My Drive/data/")
+# setwd("~/Google Drive/My Drive/data/")
 
 
 # LOAD ----
 
 # road network
-st_highways <- st_read("osm/osm_filtered/london_highways_tidy.geojson")
+st_highways <- st_read("data/london_highways_tidy.geojson")
 
 # river
-st_thames <- st_read("spatial/uk/river_thames_cropped.geojson")
+st_thames <- st_read("data/river_thames_cropped.geojson")
 
 st_thames %>% 
   leaflet_plot()
@@ -36,13 +36,13 @@ st_ulez %>%
   leaflet_plot()
 
 # congestion charge zone
-st_cz <- st_read("spatial/uk/st_congestion_zone.json")
+st_cz <- st_read("data/st_congestion_zone.json")
 
 st_cz %>% 
   leaflet_plot()
 
 # mobile data
-st_loops <- read_rds("st_mobile.rds")
+st_loops <- read_rds("data/st_mobile.rds")
 
 st_loops %>% 
   glimpse()
